@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive News Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .news-card {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-inter">
+  <div class="max-w-sm mx-auto my-10">
+    <div class="bg-white rounded-lg p-6 news-card">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center">
+          <img class="rounded-full h-12 w-12 object-cover" src="https://placehold.co/48x48" alt="Profile picture placeholder">
+          <div class="ml-3">
+            <h5 class="text-lg font-semibold text-gray-900">Posts</h5>
+            <p class="text-sm text-gray-600">9:31</p>
+          </div>
+        </div>
+      </div>
+      <!-- Placeholder for additional information -->
+      
+      <!-- News source and post content with button -->
+      <div class="p-4 bg-gray-50 rounded-lg mb-4 relative">
+        <button id="addButton" class="text-red-500 absolute top-0 right-0">
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="flex items-center mb-2">
+          <img class="h-6 w-6 object-cover" src="https://placehold.co/24x24" alt="Al Jazeera logo placeholder">
+          <h6 class="ml-2 text-sm font-bold text-gray-900">Al Jazeera</h6>
+        </div>
+        <p class="text-sm text-gray-700 mb-3">
+          Of the 24 hospitals operating in northern Gaza prior to the war, only four small ones are operational and admitting new patients, says the UN agency OCHA.
+        </p>
+        <div class="flex items-center text-gray-500 text-sm">
+          <i class="fas fa-link"></i>
+          <i class="fas fa-print ml-3"></i>
+          <i class="fas fa-share-alt ml-3"></i>
+        </div>
+        
+        
+      </div>
+      <div id="additionalInfo" class="hidden p-4 bg-gray-50 rounded-lg mb-4">
+        <div class="mb-4">
+          <strong>Insights:</strong>
+          <p>Additional insights related to the posts will appear here...</p>
+        </div>
+        <div class="mb-4">
+          <strong>Identity Label:</strong>
+          <p>Information about the identity of the post source will appear here...</p>
+        </div>
+        <div>
+          <strong>Post Statistics:</strong>
+          <p>Statistics about the post will appear here...</p>
+        </div>
+      </div>
+      <!-- ... other news content ... -->
+    </div>
+    
+  </div>
+
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.getElementById('addButton').addEventListener('click', function() {
+        var additionalInfo = document.getElementById('additionalInfo');
+        // Toggle the 'hidden' class to show or hide the additionalInfo
+        additionalInfo.classList.toggle('hidden');
+      });
+
+      // You can add more event listeners here for the 'Insights', 'Identity Label', and 'Post Statistics' buttons
+    });
+  </script>
+</body>
+</html>
